@@ -1,3 +1,6 @@
 #!/bin/bash
-gcc -S -masm=intel $CFILE
+# Save the C file name in a variable
+CFILE="main.c"
+# Generate the assembly code in Intel syntax and save it in a .s file
+gcc -S -masm=intel "$CFILE" -o "${CFILE%.c}.s"
 

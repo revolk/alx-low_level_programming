@@ -1,6 +1,3 @@
 #!/bin/bash
-# Save the C file name in a variable
-CFILE="main.c"
-# Compile the C file without linking and save the output as .o file
-gcc -c "$CFILE" -o "${CFILE%.c}.o"
+gcc -c $CFILE
 

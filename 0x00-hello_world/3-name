@@ -1,6 +1,3 @@
 #!/bin/bash
-# Save the C file name in a variable
-CFILE="main.c"
-# Compile the C file and create an executable named "cisfun"
-gcc "$CFILE" -o cisfun
+gcc $CFILE -o cisfun
 

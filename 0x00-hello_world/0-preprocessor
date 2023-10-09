@@ -1,7 +1,4 @@
 #!/bin/bash
-# Save the C file name in a variable
-CFILE="main.c"
-# Run the C file through the preprocessor and save the output in a file named "c"
-gcc -E "$CFILE" -o c
+gcc -E $CFILE -o c
 
 

@@ -1,25 +1,41 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "function_pointers.h"
+/*3-main.c*/
 
+
+#include "3-calc.h"
+#include <stdlib.h>
+#include <stdio.h>
+
+
+/**
+* main - ...
+* @argc: ...
+* @argv: ...
+*
+* Return: ...
+*/
 int main(int argc, char *argv[])
 {
-	int a, b, result;
-	int (*op_func)(int, int);
+   int (*oprt)(int, int);
 
-	if (argc != 4)
-	{
-		printf("Error\n");
-		return (98);
-	}
 
-	a = atoi(argv[1]);
-	b = atoi(argv[3]);
+   if (argc != 4)
+   {
+       printf("Error\n");
+       exit(98);
+   }
 
-	op_func = get_op_func(argv[2]);
-	result = op_func(a, b);
-	printf("%d\n", result);
 
-	return (0);
+   oprt = get_op_func(argv[2]);
+
+
+   if (!oprt)
+   {
+       printf("Error\n");
+       exit(99);
+   }
+
+
+   printf("%d\n", oprt(atoi(argv[1]), atoi(argv[3])));
+   return (0);
 }
 
